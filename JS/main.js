@@ -14,13 +14,16 @@ document.addEventListener('DOMContentLoaded', function(event) {
   };
 
   ButtonCreator.prototype.addEventListeners = function() {
-   
-      for (var i = 0; i < 10; ++i) {
-        var btn = this.buttons[i];
-        btn.value = i+1;
-        var nuevo = btn.value;
-        console.log(btn)
-        console.log(nuevo);
+    
+        for (var i = 0; i < 10; ++i) {
+          var btn = this.buttons[i];
+        btn.addEventListener('click', function() {
+          for (var j = 0; j < 10; ++j) {
+            btn.value = j+1;
+            var nuevo = btn.value;
+            alert(nuevo);
+          }
+      });
     }
   };
 
